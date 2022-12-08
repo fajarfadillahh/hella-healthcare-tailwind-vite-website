@@ -68,3 +68,11 @@
 ::selection {
   @apply bg-green-400 text-gray-900;
 }
+
+/* ===== ::-WEBKIT-SCROLLBAR ===== */
+::-webkit-scrollbar {
+  @apply w-2 bg-transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-green-400 rounded-full hover:bg-green-600;
+}
