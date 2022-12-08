@@ -78,11 +78,13 @@
     <main class="overflow-hidden">
       <!-- ===== HOME SECTION ===== -->
       <section class="home section">
-        <div class="home__container container grid gap-12">
+        <div
+          class="home__container container grid gap-12 lg:grid lg:grid-cols-2 lg:items-center"
+        >
           <div
-            class="home__data justify-self-center text-center xs:w-[400px] sm:w-[460px]"
+            class="home__data justify-self-center text-center xs:w-[400px] sm:w-[460px] lg:w-auto lg:justify-self-start lg:text-left"
           >
-            <h1 class="home__title section-title text-[38px]">
+            <h1 class="home__title section-title text-[38px] lg:text-[42px]">
               Healing yourself is connected with
               <span class="home__title-bg inline-flex py-1 px-2 bg-yellow-400"
                 >healing</span
@@ -95,7 +97,7 @@
               adipisicing elit rem sed.
             </p>
             <div
-              class="home__buttons inline-flex justify-center items-center flex-col gap-4"
+              class="home__buttons inline-flex justify-center items-center flex-col gap-4 lg:flex-row lg:justify-start"
             >
               <a href="#" class="home__buttons-appointment button"
                 >Get Appointment</a
@@ -111,7 +113,7 @@
           <img
             src="./src/img/home-img.svg"
             alt=""
-            class="home__img justify-self-center xs:w-[400px] sm:w-[460px]"
+            class="home__img justify-self-center xs:w-[400px] sm:w-[460px] lg:w-auto"
           />
         </div>
       </section>
