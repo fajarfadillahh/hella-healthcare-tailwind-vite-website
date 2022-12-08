@@ -16,12 +16,25 @@
       rel="stylesheet"
     />
 
+    <!-- On page load or when changing themes, best to add inline in `head` to avoid FOUC -->
+    <script>
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+
     <!-- 🌙 ☀️ -->
   </head>
-  <body class="font-body font-reguler">
+  <body class="font-body font-reguler dark:bg-slate-900">
     <!-- ===== HEADER SECTION ===== -->
     <header
-      class="header fixed w-full top-0 left-0 bg-white z-50 transition-all duration-300"
+      class="header fixed w-full top-0 left-0 bg-white z-50 transition-all duration-300 dark:bg-slate-900"
       id="header"
     >
       <div
@@ -29,14 +42,14 @@
       >
         <a
           href="#"
-          class="header__logo inline-flex items-center gap-2 text-[20px] text-gray-900 font-semibold"
+          class="header__logo inline-flex items-center gap-2 text-[20px] text-gray-900 font-semibold dark:text-white"
         >
           <img src="./src/img/icon.svg" alt="" class="header__logo-icon" />
           HELLA.
         </a>
 
         <div
-          class="header__menu md:flex md:items-center md:gap-6"
+          class="header__menu md:flex md:items-center md:gap-6 md:dark:bg-transparent dark:bg-slate-800"
           id="header-menu"
         >
           <ul class="header__list flex flex-col gap-6 md:flex-row">
@@ -59,14 +72,19 @@
             class="header__theme absolute top-6 right-6 text-[1.5rem] cursor-pointer md:static"
             id="theme-toggle"
           >
-            <span class="header__theme-icon" id="themeToggleDarkIcon">🌙</span>
+            <span class="header__theme-icon hidden" id="themeToggleDarkIcon"
+              >☀️</span
+            >
+            <span class="header__theme-icon hidden" id="themeToggleLightIcon"
+              >🌙</span
+            >
           </div>
 
           <a href="#" class="header__button button mt-6 md:mt-0">Account</a>
         </div>
 
         <div
-          class="header__toggle inline-flex text-[1.5rem] text-gray-900 cursor-pointer md:hidden"
+          class="header__toggle inline-flex text-[1.5rem] text-gray-900 cursor-pointer md:hidden dark:text-white"
           id="header-toggle"
         >
           <i class="bx bx-grid-alt"></i>
@@ -200,7 +218,7 @@
             <img
               src="./src/img/paper-bg.png"
               alt=""
-              class="callback__bg absolute top-0 left-0 w-full h-full object-cover object-center opacity-80 -z-10"
+              class="callback__bg absolute top-0 left-0 w-full h-full object-cover object-center opacity-80 -z-10 dark:opacity-20"
             />
 
             <div
@@ -233,7 +251,7 @@
           <div class="footer__data">
             <a
               href="#"
-              class="footer__data inline-flex items-center gap-2 text-[20px] text-gray-900 font-semibold"
+              class="footer__data inline-flex items-center gap-2 text-[20px] text-gray-900 font-semibold dark:text-white"
             >
               <img src="./src/img/icon.svg" alt="" class="footer__data-icon" />
               HELLA.
