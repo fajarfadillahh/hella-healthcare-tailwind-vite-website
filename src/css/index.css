@@ -63,3 +63,8 @@
 .scrollup.scroll-action {
   @apply bottom-16;
 }
+
+/* ===== ::SELECTION ===== */
+::selection {
+  @apply bg-green-400 text-gray-900;
+}
